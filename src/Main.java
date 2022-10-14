@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +16,14 @@ public class Main {
         String[] descriptionsArray = readDescriptions();
 
         //TODO: Steps 2+3 here go here.
+        Random rng = new Random();
+        int timer = 0;
+        int timeLimit = 100;
 
+        while (timer < timeLimit){
+            Package rngPackage = new Package();
+            ++timer;
+        }
     }
 
     public static String[] fillArray(int economyChance, int priorityChance, int overnightChance) {
