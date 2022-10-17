@@ -20,6 +20,10 @@ public class Main {
         int timer = 0;
         int timeLimit = 100;
 
+        String rngString;
+        int rngInt;
+        Package rngPackage;
+
         while (timer < timeLimit){
             Package rngPackage = new Package();
             ++timer;
