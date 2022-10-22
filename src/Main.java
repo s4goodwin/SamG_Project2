@@ -33,24 +33,22 @@ public class Main {
             int rngShippingType = rng.nextInt(chanceArray.length);
 
             Package rngPackage = new Package(descriptionsArray[rngDescription], rngWeight, null);
-            if (descriptionsArray[rngShippingType] == "economy"){
+            if (descriptionsArray[rngShippingType].equals("economy")){
                 economyShipping.enqueue(rngPackage);
-            } else if (descriptionsArray[rngShippingType] == "priority") {
+            } else if (descriptionsArray[rngShippingType].equals("priority")) {
                 priorityShipping.enqueue(rngPackage);
-            } else if (descriptionsArray[rngShippingType] == "overnight"){
+            } else if (descriptionsArray[rngShippingType].equals("overnight")){
                 overnightShipping.enqueue(rngPackage);
             }
             if (timer %10 == 0){
-                System.out.println(economyShipping.peek().toString() +""+ priorityShipping.peek().toString() +""+
-                        overnightShipping.peek().toString());
+                System.out.println(economyShipping.peek() +""+ priorityShipping.peek() +""+
+                        overnightShipping.peek());
             }
             ++timer;
         }
-
-            
-        }
-
-
+        System.out.println("Size of economyShipping: "+ economyShipping.size);
+        System.out.println("Size of priorityShipping: "+ priorityShipping.size);
+        System.out.println("Size of overnightShipping: "+ overnightShipping.size);
 
     }
 
