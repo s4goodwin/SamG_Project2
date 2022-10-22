@@ -7,6 +7,7 @@ public class PackageQueue {
     Package back;
     int size;
 
+    //creates an empty package que
     public PackageQueue() {
         this.front = null;
         this.back = null;
@@ -19,6 +20,7 @@ public class PackageQueue {
         size = 0;
     }
 
+    //new node at back, a package will be used to create node
     public void enqueue(Package newPackage) {
         if (size == 0) {
             //If empty, the new package is both the front and back now.
@@ -32,6 +34,7 @@ public class PackageQueue {
         ++size; //Either way, we will successfully add a package, so deferring this until here saves a line.
     }
 
+    //returns but doesnt remove first node of que
     public Package peek() {
         if (size == 0) {
             return null;
@@ -40,6 +43,7 @@ public class PackageQueue {
         }
     }
 
+    //removes but doesnt return first node of que
     public Package dequeue() {
         Package toReturn;
         if (size == 0) {

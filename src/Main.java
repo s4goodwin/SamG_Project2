@@ -8,7 +8,9 @@ public class Main {
     public static void main(String[] args) {
         //TODO: change these to change the likelihood of a random Package shipping economy, priority, or overnight.
         //TODO: Make sure these total 100 or chanceArray will have null values in it (which would crash the program if accessed).
-        int economyChance = 50, priorityChance = 30, overnightChance = 20;
+        int economyChance = 50;
+        int priorityChance = 30;
+        int overnightChance = 20;
 
         //TODO: Use this later to determine which type of shipping each package has.
         String[] chanceArray = fillArray(economyChance, priorityChance, overnightChance);
@@ -16,18 +18,40 @@ public class Main {
         String[] descriptionsArray = readDescriptions();
 
         //TODO: Steps 2+3 here go here.
-        Random rng = new Random();
+        PackageQueue economyShipping = new PackageQueue();                              //2.1
+        PackageQueue priorityShipping = new PackageQueue();
+        PackageQueue overnightShipping = new PackageQueue();
+
+        Random rng = new Random();                                                      //2.2 set up randomness for later
+
         int timer = 0;
         int timeLimit = 100;
 
-        String rngString;
-        int rngInt;
-        Package rngPackage;
-
         while (timer < timeLimit){
-            Package rngPackage = new Package();
+            int rngDescription = rng.nextInt(descriptionsArray.length);
+            int rngWeight = rng.nextInt(100) + 1;
+            int rngShippingType = rng.nextInt(chanceArray.length);
+
+            Package rngPackage = new Package(descriptionsArray[rngDescription], rngWeight, null);
+            if (descriptionsArray[rngShippingType] == "economy"){
+                economyShipping.enqueue(rngPackage);
+            } else if (descriptionsArray[rngShippingType] == "priority") {
+                priorityShipping.enqueue(rngPackage);
+            } else if (descriptionsArray[rngShippingType] == "overnight"){
+                overnightShipping.enqueue(rngPackage);
+            }
+            if (timer %10 == 0){
+                System.out.println(economyShipping.peek().toString() +""+ priorityShipping.peek().toString() +""+
+                        overnightShipping.peek().toString());
+            }
             ++timer;
         }
+
+            
+        }
+
+
+
     }
 
     public static String[] fillArray(int economyChance, int priorityChance, int overnightChance) {
@@ -41,10 +65,10 @@ public class Main {
         arrayPointer += priorityChance;
         Arrays.fill(chanceArray, arrayPointer, arrayPointer + overnightChance, "overnight");
 
-//        for(String shipMethod : chanceArray) {
-//            System.out.print(shipMethod + " -> ");
-//        }
-//        System.out.println("end");
+        /*for(String shipMethod : chanceArray) {
+            System.out.print(shipMethod + " -> ");
+        }
+        System.out.println("end");*/
 
         return chanceArray;
     }

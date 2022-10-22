@@ -5,13 +5,19 @@ public class Package {
     Package next;
 
     public Package(String newDescription, int newWeight, Package newNext){
+       description = newDescription;
+       weight = newWeight;
+       next = newNext;
+    }
+
+    /*public Package(String newDescription, int newWeight, Package newNext){
         description = newDescription;
         weight = newWeight;
         next = newNext;
     }
-
+*/
     public String toString(){                                   //why should it be void, when asked to return something?
-        return "Package Contents: "+ description +" "+ weight +" ";
+        return "Package Contents: "+ description +" ("+ weight +"lbs)";
     }
 
 
