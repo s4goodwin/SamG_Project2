@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6277f2d-d70a-4607-83bc-429046342d30" name="Changes" comment="think i finished while loop">
+    <list default="true" id="a6277f2d-d70a-4607-83bc-429046342d30" name="Changes" comment="completed before tweak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/descriptions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/descriptions.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666399614235</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="completed before tweak">
+      <created>1666400809922</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666400809922</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +98,7 @@
     <MESSAGE value="up to step 2, working on main class" />
     <MESSAGE value="starting work on 10/17" />
     <MESSAGE value="think i finished while loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="think i finished while loop" />
+    <MESSAGE value="completed before tweak" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed before tweak" />
   </component>
 </project>
